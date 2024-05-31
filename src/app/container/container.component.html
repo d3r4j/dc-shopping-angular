@@ -1,0 +1,28 @@
+
+<app-search (SearchTextChange)="setSearchText($event)"> </app-search>
+<p>
+  <a *ngFor=" let dhiraj of listmenu" href="#"> {{dhiraj}} </a>
+ </p>
+<span> </span>
+ <div>
+
+<span><img [src] = "product.image"></span>
+<p>name: {{product.name}}</p>
+<p>price:{{"$"+product.price}}</p>
+<p>color : {{product.color}} </p>
+<p>discount: {{product.discount + "%"}} </p>
+<p>discounted price : {{getDiscoountedprice().toFixed(2)}} </p>
+<p> {{product.inStock > 0 ? "only  "+ product.inStock +"  pieces left":"not in stocks"}} </p>
+<button class="btn btn-success" [disabled] = " ! (product.inStock > 0) " > Buy Now</button>
+<input placeholder="E-Signature" (input)="onnameChange($event)"/>
+<p> name :{{name}} </p> 
+
+<span> Add to Cart
+    <button class="crt"  (click)="decrement()">-</button>
+  <span> {{addtocart}} </span>
+    
+    <button class="crt"  (click)="increment()">+</button>
+</span>
+</div>
+<div class="listofitem"> 
+  <productlist [search_Prod_Container]="SearchText"> </productlist> </div>

@@ -1,0 +1,7 @@
+<div class="search-product">
+    <!-- <input type="text" class="search-input" [value]="searchedtext" (input)="updatedtext($event)"  > -->
+    <input type="text" class="search-input" [(ngModel)]="searchedtext" (input)="onSearchTextChange"  >
+    <button [ngClass]="{'btn': true, 'btn-search': searchedtext, 'btn-disable': !searchedtext}"  [disabled]="!searchedtext">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+ <div class="search-result"> <p  *ngIf=" searchedtext != '' "><strong>Search result for:</strong>{{searchedtext}}</p></div>
+ 
